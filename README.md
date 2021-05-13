@@ -16,6 +16,7 @@ Project submitted under course CBS2003, Design Thinking
 
 ## For editing and merging:
 * Fork the repo
+* Create a new branch
 * Clone into your local system
-* Make changes and push to your repo
+* Make changes and push to your repo branch
 * Click on make pull request once above steps are done
