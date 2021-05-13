@@ -5,4 +5,4 @@ from flask import request,redirect,url_for,render_template
 @app.route('/')
 @app.route('/home')
 def home():
-    return "This is home page"
+    return render_template('index.html')
