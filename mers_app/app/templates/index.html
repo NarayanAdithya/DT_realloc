@@ -97,12 +97,12 @@
                 <h2 class="sr-only">Ticket Form</h2>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
                 <h3 class="text-center">Enter Ticket Details</h3>
-                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="email" name="email" placeholder="PNR Number"></div>
-                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="password" name="password" placeholder="Seat Number"></div>
-                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="password" name="password" placeholder="Coach Number"></div>
-                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="password" name="password" placeholder="Train Number"></div>
+                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="text" name="pnr" placeholder="PNR Number"></div>
+                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="text" name="seatnumber" placeholder="Seat Number"></div>
+                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="text" name="coach" placeholder="Coach Number"></div>
+                <div class="form-group" data-bss-hover-animate="pulse"><input class="form-control" type="text" name="train_no" placeholder="Train Number"></div>
                 <p>For Further process</p>
-                <div class="form-group" data-bss-hover-animate="pulse"><button class="btn btn-primary btn-block" type="submit"><a class="forgot" href="Registration.html" >Sign Up!</a></button>
+                <div class="form-group" data-bss-hover-animate="pulse"><button class="btn btn-primary btn-block" type="submit"><a class="forgot" >Sign Up!</a></button>
             </form>
         </section>
                         
@@ -132,15 +132,15 @@
                     <h4><strong>Ticket Booking</strong></h4>
                     <p class="mb-0 text-faded">Train Ticket Booking using IRCTC</p>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-bss-hover-animate="pulse"><span class="mx-auto service-icon rounded-circle mb-3"><a href="Seat.html"><i class="fa fa-send" data-bss-hover-animate="pulse"></i></a></span></span>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-bss-hover-animate="pulse"><span class="mx-auto service-icon rounded-circle mb-3"><a href="{{url_for('seatchange')}}"><i class="fa fa-send" data-bss-hover-animate="pulse"></i></a></span></span>
                     <h4><strong>Seat Shift</strong></h4>
                     <p class="mb-0 text-faded">Not happy with the present seat reservation? Apply for seat shift!!</p>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-bss-hover-animate="pulse"><span class="mx-auto service-icon rounded-circle mb-3"><a href="Chat.html"><i class="fas fa-phone"></i></a></span>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-bss-hover-animate="pulse"><span class="mx-auto service-icon rounded-circle mb-3"><a href="{{url_for('contact')}}"><i class="fas fa-phone"></i></a></span>
                     <h4><strong>Contact</strong></h4>
                     <p class="mb-0 text-faded"><span></span><span>Customized privileged Chat room for private contact!</span></p>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-bss-hover-animate="pulse"><span class="mx-auto service-icon rounded-circle mb-3"><a href="Contact.html"><i class="fas fa-question"></i></a></span>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-bss-hover-animate="pulse"><span class="mx-auto service-icon rounded-circle mb-3"><a href="{{url_for('chatpage')}}"><i class="fas fa-question"></i></a></span>
                     <h4><strong>Question</strong></h4>
                     <p class="mb-0 text-faded">Ask your queries here! We will get back to you in no time!</p>
                 </div>

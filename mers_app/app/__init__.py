@@ -19,7 +19,7 @@ login.message='Please Login To Access The Page'
 login.login_message_category='info'
 #DB Setup
 db=SQLAlchemy(app)
-migrate=Migrate(app,db)
+migrate=Migrate(app,db,render_as_batch=True)
 
 
 from app import routes,models

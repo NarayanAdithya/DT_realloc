@@ -98,6 +98,37 @@
  <span style="color: red;">[{{ error }}]</span>
  {% endfor %}
                 </div>
+
+                <div class="form-group" data-bss-hover-animate="pulse">{{form.aadhar}}
+                  {% for error in form.aadhar.errors %}
+ <span style="color: red;">[{{ error }}]</span>
+ {% endfor %}
+                </div>
+
+                <div class="form-group" data-bss-hover-animate="pulse">{{form.mobile_number}}
+                  {% for error in form.mobile_number.errors %}
+ <span style="color: red;">[{{ error }}]</span>
+ {% endfor %}
+                </div>
+
+                <div class="form-group" data-bss-hover-animate="pulse">{{form.area_pincode}}
+                  {% for error in form.area_pincode.errors %}
+ <span style="color: red;">[{{ error }}]</span>
+ {% endfor %}
+                </div>
+                <div class="form-group" data-bss-hover-animate="pulse">{{form.age}}
+                  {% for error in form.age.errors %}
+ <span style="color: red;">[{{ error }}]</span>
+ {% endfor %}
+                </div>
+                <br>
+                <h4>Gender:</h4>
+                <div class="form-group" style='list-style:none;' data-bss-hover-animate="pulse">{{form.label}}{{form.gender}}
+                  {% for error in form.gender.errors %}
+ <span style="color: red;">[{{ error }}]</span>
+ {% endfor %}
+                </div>
+                <br>
                 <div class="form-group" data-bss-hover-animate="pulse">{{form.password}}
                   {% for error in form.password.errors %}
  <span style="color: red;">[{{ error }}]</span>
@@ -108,6 +139,7 @@
  <span style="color: red;">[{{ error }}]</span>
  {% endfor %}
                 </div>
+                
                 <div class="form-group">
                     <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
                 </div>

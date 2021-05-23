@@ -1,15 +1,27 @@
 from app import app,db
 from flask import request,redirect,url_for,render_template,flash,get_flashed_messages,jsonify
 from flask_login import current_user,login_user,logout_user,login_required
-from app.models import User
+from app.models import User,passenger,ticket,train,train_status,cancellation,books,starts,stopsat,station
 from app.forms import LoginForm,RegisterForm
 from werkzeug.urls import url_parse
 from wtforms.validators import ValidationError
 from datetime import datetime
 
-@app.route('/')
-@app.route('/home')
+@app.route('/',methods=['POST','GET'])
+@app.route('/home',methods=['POST','GET'])
 def home():
+    if(request.method=='POST'):
+        pnr=request.form['pnr']
+        seatnumber=int(request.form['seatnumber'])
+        coach=request.form['seatnumber']
+        train_no=int(request.form['train_no'])
+        if(passenger.query.filter_by(pnr_no=pnr).first() is None):
+            flash("Invalid PNR",category="danger")
+            return redirect(url_for('home'))
+        print(pnr)
+        p=passenger.query.filter_by(pnr_no=pnr).first()
+        print(p)
+        return render_template('info.html',person=p)
     return render_template('index.html')
 
 @app.route('/logout')
@@ -24,7 +36,7 @@ def register():
         return redirect(url_for('index'))
     form=RegisterForm()
     if form.validate_on_submit():
-        user=User(email=form.email.data,username=form.username.data)
+        user=User(email=form.email.data,username=form.username.data,aadhar=form.aadhar.data,mobile_number=form.mobile_number.data,pincode=form.area_pincode.data,age=form.age.data,gender=form.gender.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -67,4 +79,5 @@ def login():
             next_page=url_for('home')
         return redirect(next_page)
     return render_template('login.html',title='SignIn',form=form)
+
 
